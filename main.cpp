@@ -76,7 +76,7 @@ int main ()
         data->cursys = rand() % 0xffff;
 
         output->mod = ACS_UPD_ID;
-        output->data_size = sizeof(cmd_output_t);
+        output->data_size = sizeof(acs_upd_output_t);
         memcpy(output->data, data, output->data_size);
         memcpy(outbound, output, sizeof(cmd_output_t));
         outbound->guid = GST_GUID;
