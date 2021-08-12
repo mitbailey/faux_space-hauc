@@ -78,7 +78,7 @@ int main ()
         output->mod = ACS_UPD_ID;
         output->data_size = sizeof(acs_upd_output_t);
         memcpy(output->data, data, output->data_size);
-        memcpy(outbound, output, sizeof(cmd_output_t));
+        memcpy(outbound->payload, output, sizeof(cmd_output_t));
         outbound->guid = GST_GUID;
         outbound->crc = crc16(outbound->payload, GST_MAX_PAYLOAD_SIZE);
         outbound->crc1 = outbound->crc;
