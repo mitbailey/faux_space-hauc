@@ -48,6 +48,7 @@ int main ()
         if (input->mod != ACS_UPD_ID)
         {
             dbprintlf(RED_FG "Packet was not ACS update: 0x%02x.", input->mod);
+            continue;
         }
 
         dbprintlf(BLUE_FG "Successfully received ACS update packet, sending randomized ACS data...");
