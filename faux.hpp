@@ -92,3 +92,30 @@ typedef struct __attribute__((packed))
     int data_size;          // 4
     unsigned char data[46]; // 46
 } cmd_output_t;
+
+/// From SPACE-HAUC/uhf_gst ///
+#define GST_MAX_PAYLOAD_SIZE 56
+#define GST_MAX_PACKET_SIZE 64
+#define GST_GUID 0x6f35
+#define GST_TERMINATION 0x0d0a // CRLF
+typedef struct __attribute__((packed))
+{
+    uint16_t guid;
+    uint16_t crc;
+    uint8_t payload[GST_MAX_PAYLOAD_SIZE];
+    uint16_t crc1;
+    uint16_t termination;
+} gst_frame_t;
+#define GST_MAX_FRAME_SIZE sizeof(gst_frame_t)
+
+enum GST_ERRORS
+{
+    GST_ERROR = -1,            //!< General error
+    GST_TOUT = 0,              //!< Operation timed out
+    GST_SUCCESS = 1,           //!<
+    GST_PACKET_INCOMPLETE = 2, //!< Incomplete data received
+    GST_GUID_ERROR = 3,        //!< GUID mismatch
+    GST_CRC_MISMATCH = 4,      //!< CRC mismatch
+    GST_CRC_ERROR = 5,         //!< Wrong CRC
+};
+///////////////////////////////
