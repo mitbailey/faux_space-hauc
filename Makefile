@@ -6,7 +6,7 @@ TARGET = faux.out
 
 all: $(COBJS)
 	$(CXX) $(CXXFLAGS) $(COBJS) -o $(TARGET) $(EDLDFLAGS)
-	./$(TARGET)
+	sudo ./$(TARGET)
 
 %.o: %.c
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
