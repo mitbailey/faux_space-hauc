@@ -36,7 +36,7 @@ int main ()
 
         if (retval != sizeof(cmd_input_t))
         {
-            dbprintlf(RED_FG "Invalid data read.");
+            dbprintlf(RED_FG "Invalid data read: %d.", retval);
             continue;
         }
         
