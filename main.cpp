@@ -31,7 +31,7 @@ int main ()
         memset(output, 0x0, sizeof(cmd_output_t));
         memset(data, 0x0, sizeof(acs_upd_output_t));
 
-        // dbprintlf(GREEN_FG "Reading...");
+        dbprintlf(GREEN_FG "Reading...");
         retval = si446x_read(input, sizeof(cmd_input_t), &RSSI);
 
         if (retval != sizeof(cmd_input_t))
@@ -40,7 +40,7 @@ int main ()
             continue;
         }
         
-        // dbprintlf(BLUE_FG "Read %d bytes.", retval);
+        dbprintlf(BLUE_FG "Read %d bytes.", retval);
 
         if (input->mod != ACS_UPD_ID)
         {
