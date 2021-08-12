@@ -83,7 +83,7 @@ int main ()
         outbound->crc = crc16(outbound->payload, GST_MAX_PAYLOAD_SIZE);
         outbound->crc1 = outbound->crc;
         outbound->termination = GST_TERMINATION;
-        si446x_write(output, sizeof(cmd_output_t));
+        si446x_write(outbound, sizeof(gst_frame_t));
     }
     
     return 0;
