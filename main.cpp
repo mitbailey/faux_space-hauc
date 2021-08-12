@@ -25,6 +25,9 @@ int main ()
     int16_t RSSI = -1;
     int retval = -1;
 
+    // This is REQUIRED because si446x radio must SEND prior to receiving. Who knows why.
+    si446x_en_pipe();
+
     while(1)
     {
         memset(input, 0x0, sizeof(cmd_input_t));
